@@ -1,0 +1,59 @@
+2020-08-10 21:45:36 DEBUG RequestAddCookies:123 - CookieSpec selected: default
+2020-08-10 21:45:36 DEBUG RequestAuthCache:77 - Auth cache not set in the context
+2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:267 - Connection request: [route: {s}->https://apiext.huya.com:443][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:312 - Connection leased: [id: 0][route: {s}->https://apiext.huya.com:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2020-08-10 21:45:36 DEBUG MainClientExec:234 - Opening connection {s}->https://apiext.huya.com:443
+2020-08-10 21:45:36 DEBUG DefaultHttpClientConnectionOperator:139 - Connecting to apiext.huya.com/118.25.86.71:443
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:366 - Connecting socket to apiext.huya.com/118.25.86.71:443 with timeout 3000
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:430 - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:431 - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:435 - Starting handshake
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:465 - Secure session established
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:466 -  negotiated protocol: TLSv1.2
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:467 -  negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:475 -  peer principal: CN=deploy-jingwei.huya.com, O=广州虎牙信息科技有限公司, L=广州市, ST=广东省, C=CN
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:484 -  peer alternative names: [*.yotok.chat, aiguofeng.cn, *.huya.info, *.huyagame.cn, *.kfctest.com, *.licolico.cn, *.master.live, *.nimo.live, *.nimo.tv, *.nimolive.com, *.pandaol.hk, *.poko.app, *.tuboshu.com, *.yaoguo.com, yotok.chat, *.peiwanlu.com, *.aiguofeng.cn, huya.com, huya.info, huyagame.cn, kfctest.com, licolico.cn, master.live, nimo.live, nimo.tv, nimolive.com, pandaol.hk, poko.app, tuboshu.com, yaoguo.com, *.huya.com, deploy-jingwei.huya.com, *.biuu.com.cn, biuu.com.cn, *.autov.com.cn]
+2020-08-10 21:45:36 DEBUG SSLConnectionSocketFactory:488 -  issuer principal: CN=GeoTrust CN RSA CA G1, OU=www.digicert.com, O=DigiCert Inc, C=US
+2020-08-10 21:45:36 DEBUG DefaultHttpClientConnectionOperator:146 - Connection established 192.168.1.11:60644<->118.25.86.71:443
+2020-08-10 21:45:36 DEBUG DefaultManagedHttpClientConnection:88 - http-outgoing-0: set socket timeout to 3000
+2020-08-10 21:45:36 DEBUG MainClientExec:255 - Executing request POST /message/deliverRoomByProfileId?appId=u959bb65246ad1cc&extId=dukbtewh HTTP/1.1
+2020-08-10 21:45:36 DEBUG MainClientExec:266 - Proxy auth state: UNCHALLENGED
+2020-08-10 21:45:36 DEBUG headers:133 - http-outgoing-0 >> POST /message/deliverRoomByProfileId?appId=u959bb65246ad1cc&extId=dukbtewh HTTP/1.1
+2020-08-10 21:45:36 DEBUG headers:136 - http-outgoing-0 >> Content-Type: application/json
+2020-08-10 21:45:36 DEBUG headers:136 - http-outgoing-0 >> authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdG9yIjoiREVWIiwicHJvZmlsZUlkIjoiIiwiYXBwSWQiOiJ1OTU5YmI2NTI0NmFkMWNjIiwiZXh0SWQiOiJkdWtidGV3aCIsImV4cCI6MTU5NzA2NzczNCwiaWF0IjoxNTk3MDY3MTM0fQ.dDqDA6s0saJly7121cA0A3VYnfzpi0bbx5EvbXKjyKE
+2020-08-10 21:45:36 DEBUG headers:136 - http-outgoing-0 >> Content-Length: 82
+2020-08-10 21:45:36 DEBUG headers:136 - http-outgoing-0 >> Host: apiext.huya.com
+2020-08-10 21:45:36 DEBUG headers:136 - http-outgoing-0 >> Connection: Keep-Alive
+2020-08-10 21:45:36 DEBUG headers:136 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_251)
+2020-08-10 21:45:36 DEBUG headers:136 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "POST /message/deliverRoomByProfileId?appId=u959bb65246ad1cc&extId=dukbtewh HTTP/1.1[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "Content-Type: application/json[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdG9yIjoiREVWIiwicHJvZmlsZUlkIjoiIiwiYXBwSWQiOiJ1OTU5YmI2NTI0NmFkMWNjIiwiZXh0SWQiOiJkdWtidGV3aCIsImV4cCI6MTU5NzA2NzczNCwiaWF0IjoxNTk3MDY3MTM0fQ.dDqDA6s0saJly7121cA0A3VYnfzpi0bbx5EvbXKjyKE[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "Content-Length: 82[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "Host: apiext.huya.com[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_251)[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 >> "[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:87 - http-outgoing-0 >> "{"profileId":"","event":"test_message","message":"{\"message\":\"[0xe6][0xb5][0x8b][0xe8][0xaf][0x95][0xe6][0xb6][0x88][0xe6][0x81][0xaf]\"}"}"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 << "HTTP/1.1 589 ip not authorize[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 << "Server: nginx[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 << "Date: Mon, 10 Aug 2020 13:45:36 GMT[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 << "Content-Type: application/json[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 << "Content-Length: 16[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:73 - http-outgoing-0 << "[\r][\n]"
+2020-08-10 21:45:36 DEBUG wire:87 - http-outgoing-0 << "ip not authorize"
+2020-08-10 21:45:36 DEBUG headers:122 - http-outgoing-0 << HTTP/1.1 589 ip not authorize
+2020-08-10 21:45:36 DEBUG headers:125 - http-outgoing-0 << Server: nginx
+2020-08-10 21:45:36 DEBUG headers:125 - http-outgoing-0 << Date: Mon, 10 Aug 2020 13:45:36 GMT
+2020-08-10 21:45:36 DEBUG headers:125 - http-outgoing-0 << Content-Type: application/json
+2020-08-10 21:45:36 DEBUG headers:125 - http-outgoing-0 << Content-Length: 16
+2020-08-10 21:45:36 DEBUG headers:125 - http-outgoing-0 << Connection: keep-alive
+2020-08-10 21:45:36 DEBUG MainClientExec:285 - Connection can be kept alive indefinitely
+2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:344 - Connection [id: 0][route: {s}->https://apiext.huya.com:443] can be kept alive indefinitely
+2020-08-10 21:45:36 DEBUG DefaultManagedHttpClientConnection:88 - http-outgoing-0: set socket timeout to 0
+2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:351 - Connection released: [id: 0][route: {s}->https://apiext.huya.com:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:411 - Connection manager is shutting down
+2020-08-10 21:45:36 DEBUG DefaultManagedHttpClientConnection:79 - http-outgoing-0: Close connection
+2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:434 - Connection manager shut down
