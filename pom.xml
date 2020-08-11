@@ -48,6 +48,24 @@
 		    <artifactId>httpclient</artifactId>
 		    <version>4.5.12</version>
 		</dependency>
+
+      <dependency>
+          <groupId>redis.clients</groupId>
+          <artifactId>jedis</artifactId>
+          <version>2.9.0</version>
+      </dependency>
+      <!--netty start-->
+      <dependency>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-all</artifactId>
+          <version>4.1.34.Final</version>
+      </dependency>
+      <!--netty end-->
+      <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>16.0.1</version>
+      </dependency>
 	</dependencies>
   
 </project>

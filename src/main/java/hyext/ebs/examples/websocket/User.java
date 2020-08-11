@@ -100,4 +100,21 @@ public class User {
     public void setSenderGender(boolean senderGender) {
         this.senderGender = senderGender;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "senderLevel=" + senderLevel +
+                ", unionId='" + unionId + '\'' +
+                ", badgeName='" + badgeName + '\'' +
+                ", senderAvatarUrl='" + senderAvatarUrl + '\'' +
+                ", showMode=" + showMode +
+                ", fansLevel=" + fansLevel +
+                ", sendNick='" + sendNick + '\'' +
+                ", nobleLevel=" + nobleLevel +
+                ", content='" + content + '\'' +
+                ", roomId=" + roomId +
+                ", senderGender=" + senderGender +
+                '}';
+    }
 }
