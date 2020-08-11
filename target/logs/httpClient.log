@@ -57,3 +57,58 @@
 2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:411 - Connection manager is shutting down
 2020-08-10 21:45:36 DEBUG DefaultManagedHttpClientConnection:79 - http-outgoing-0: Close connection
 2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:434 - Connection manager shut down
+2020-08-11 03:03:19 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
+	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
+	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
+	at org.java_websocket.WebSocketImpl.decodeFrames(WebSocketImpl.java:381)
+	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
+	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-11 03:05:44 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
+	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
+	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
+	at org.java_websocket.WebSocketImpl.decodeFrames(WebSocketImpl.java:381)
+	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
+	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-11 03:06:44 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
+	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
+	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
+	at org.java_websocket.WebSocketImpl.decodeFrames(WebSocketImpl.java:381)
+	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
+	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-11 03:07:21 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
+	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
+	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
+	at org.java_websocket.WebSocketImpl.decodeFrames(WebSocketImpl.java:381)
+	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
+	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-11 03:29:50 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
+	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
+	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
+	at org.java_websocket.WebSocketImpl.decodeFrames(WebSocketImpl.java:381)
+	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
+	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
+	at java.lang.Thread.run(Thread.java:748)
