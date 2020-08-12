@@ -38,8 +38,6 @@ public class RedisUtil {
             jedisPoolConfig.setMaxWaitMillis(Long.parseLong( SysConfigUtil.getSysConfigUtil("application.yml").getProperty("redis.maxWaitMillis")));
             jedisPoolConfig.setTestOnBorrow(Boolean.parseBoolean(SysConfigUtil.getSysConfigUtil("application.yml").getProperty("redis.testOnBorrow")));
             jedisPoolConfig.setMinIdle(1);
-            System.out.println(jedisPoolConfig.getMaxIdle());
-            System.out.println(jedisPoolConfig.getMaxTotal());
             if (password != null && !"".equals(password)) {
                 // redis 设置了密码
                 pool = new JedisPool(jedisPoolConfig, ip, port, 10000, password);
@@ -507,6 +505,22 @@ public class RedisUtil {
 
         Jedis jedis = getJedis();
         return jedis.lpop(key);
+    }
+
+    /**
+     * 通过key从list的头部删除一个value,并返回该value
+     *
+     * @param key
+     * @return
+     */
+    public synchronized String blpop(String key) {
+
+        Jedis jedis = getJedis();
+        List<String> list = jedis.blpop(0,key);
+        if(list!=null && list.size() > 0){
+            return list.get(1);
+        }
+        return null;
     }
 
     /**

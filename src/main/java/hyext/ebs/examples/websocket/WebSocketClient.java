@@ -76,7 +76,9 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
         System.out.println(content);
         if(content!=null){
             if(content.equalsIgnoreCase("w") || content.equalsIgnoreCase("s") ||
-                    content.equalsIgnoreCase("a") || content.equalsIgnoreCase("d")){
+                    content.equalsIgnoreCase("a") || content.equalsIgnoreCase("d")
+                    || content.equalsIgnoreCase("z") || content.equalsIgnoreCase("p")
+                    || content.equalsIgnoreCase("e")){
                 redisUtil.rpush("huya:command",content);
             }
         }

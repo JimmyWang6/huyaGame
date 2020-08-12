@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.inner{
+	width:100%
+}
+
+.cmd-item{
+	background:#3498db;
+	padding:15px;
+	width:100%;
+	display:flex;
+	flex-direction:row;
+}
+
+.cmd-item-active{
+	padding:15px;
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	background:red;
+}
+
+.cmd-item-left{
+	flex:1;
+}
+
+.text{
+	color:#FFFFFF;
+}

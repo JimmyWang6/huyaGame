@@ -23,7 +23,9 @@ public class MqttServerHandler extends SimpleChannelInboundHandler<String> {
 
     public MqttServerHandler(){
         try {
-            taskExe.execute(new Task());
+            WebSocketServer webSocketServer = new WebSocketServer(9999);
+            webSocketServer.start();
+            taskExe.execute(new Task(webSocketServer));
         }catch (Exception e){
             e.printStackTrace();
         }
