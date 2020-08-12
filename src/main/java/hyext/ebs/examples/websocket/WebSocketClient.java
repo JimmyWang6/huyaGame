@@ -6,10 +6,12 @@ import com.auth0.jwt.algorithms.Algorithm;
 
 import hyext.ebs.examples.utils.ParamsUtil;
 
+import hyext.ebs.examples.utils.RedisUtil;
 import org.java_websocket.enums.ReadyState;
 import org.java_websocket.handshake.ServerHandshake;
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.URI;
 import java.util.Date;
 import java.util.HashMap;
@@ -21,10 +23,14 @@ import java.util.Map;
  *
  */
 public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
+
     private StringHandler stringHandler  = new StringHandler();
+
+    private RedisUtil redisUtil;
     
-    public WebSocketClient(URI serverUri) throws AWTException {
+    public WebSocketClient(URI serverUri) throws AWTException, IOException {
         super(serverUri);
+        redisUtil = RedisUtil.getRedisUtil();
     }
 
     @Override
@@ -67,40 +73,47 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
         User user = new User();
         JSONObject obj = JSONObject.parseObject(arg0).getJSONObject("data");
         user = (User)JSONObject.toJavaObject(obj, User.class);
-        System.out.println(user.getContent());
-        stringHandler.handle(user.getContent());
-    	try {
-        	JSONObject res = JSONObject.parseObject(arg0);
-        	if("command".equals(res.getString("notice"))) {//监听成功回包
-        		System.out.println("-------- 监听事件： " + res.getJSONObject("data").getJSONArray("data") + " 成功--------");
-
-        	}
-        	if("getSendItemNotice".equals(res.getString("notice"))) {
-                JSONObject data = JSONObject.parseObject(arg0).getJSONObject("data");
-                //粉丝徽章名称
-                String badgeName = data.getString("badgeName");
-                //粉丝等级
-                Integer fansLevel = data.getInteger("fansLevel");
-                //礼物id
-                Integer giftId = data.getInteger("itemId");
-                //贵族等级
-                Integer nobleLevel = data.getInteger("nobleLevel");
-                //房间号
-                Long roomId = data.getLong("roomId");
-                //送礼连击数
-                Long sendItemCount = data.getLong("sendItemCount");
-                //送礼者昵称
-                String sendNick = data.getString("sendNick");
-                //用户等级
-                Long senderLevel = data.getLong("senderLevel");
-                
-                System.out.println(String.format("-------- 粉丝勋章：%s,粉丝等级:%s,礼物id:%s,贵族等级:%s,房间号:%s,送礼连击数:%s,送礼者昵称:%s,用户等级:%s --------"
-                		,badgeName,fansLevel,giftId,nobleLevel,roomId,sendItemCount,sendNick,senderLevel));
-        	}
-    		
-		} catch (Exception e) {
-			System.out.println("-------- 数据处理异常 --------");
-		}
+        String content = user.getContent();
+        System.out.println(content);
+        if(content!=null){
+            if(content.equalsIgnoreCase("w") || content.equalsIgnoreCase("s") ||
+                    content.equalsIgnoreCase("a") || content.equalsIgnoreCase("d")
+                    || content.equalsIgnoreCase("z") || content.equalsIgnoreCase("p")
+                    || content.equalsIgnoreCase("e")){
+                redisUtil.rpush("huya:command",content);
+            }
+        }
+//    	try {
+//        	JSONObject res = JSONObject.parseObject(arg0);
+//        	if("command".equals(res.getString("notice"))) {//监听成功回包
+//        		System.out.println("-------- 监听事件： " + res.getJSONObject("data").getJSONArray("data") + " 成功--------");
+//        	}
+//        	if("getSendItemNotice".equals(res.getString("notice"))) {
+//                JSONObject data = JSONObject.parseObject(arg0).getJSONObject("data");
+//                //粉丝徽章名称
+//                String badgeName = data.getString("badgeName");
+//                //粉丝等级
+//                Integer fansLevel = data.getInteger("fansLevel");
+//                //礼物id
+//                Integer giftId = data.getInteger("itemId");
+//                //贵族等级
+//                Integer nobleLevel = data.getInteger("nobleLevel");
+//                //房间号
+//                Long roomId = data.getLong("roomId");
+//                //送礼连击数
+//                Long sendItemCount = data.getLong("sendItemCount");
+//                //送礼者昵称
+//                String sendNick = data.getString("sendNick");
+//                //用户等级
+//                Long senderLevel = data.getLong("senderLevel");
+//
+//                System.out.println(String.format("-------- 粉丝勋章：%s,粉丝等级:%s,礼物id:%s,贵族等级:%s,房间号:%s,送礼连击数:%s,送礼者昵称:%s,用户等级:%s --------"
+//                		,badgeName,fansLevel,giftId,nobleLevel,roomId,sendItemCount,sendNick,senderLevel));
+//        	}
+//
+//		} catch (Exception e) {
+//			System.out.println("-------- 数据处理异常 --------");
+//		}
     }
     
     /**
