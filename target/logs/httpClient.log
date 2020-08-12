@@ -57,9 +57,16 @@
 2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:411 - Connection manager is shutting down
 2020-08-10 21:45:36 DEBUG DefaultManagedHttpClientConnection:79 - http-outgoing-0: Close connection
 2020-08-10 21:45:36 DEBUG PoolingHttpClientConnectionManager:434 - Connection manager shut down
+<<<<<<< HEAD
 2020-08-11 17:56:55 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
 java.lang.NullPointerException
 	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:76)
+=======
+2020-08-11 03:03:19 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+>>>>>>> 41131b1b8ea246985421db1782c528a457390c17
 	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
 	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
 	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
@@ -67,6 +74,7 @@ java.lang.NullPointerException
 	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
 	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 2020-08-11 17:57:48 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
 redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null
 	at redis.clients.util.SafeEncoder.encode(SafeEncoder.java:28)
@@ -423,6 +431,12 @@ redis.clients.jedis.exceptions.JedisException: Could not get a resource from the
 	at hyext.ebs.examples.utils.RedisUtil.getJedis(RedisUtil.java:930)
 	at hyext.ebs.examples.utils.RedisUtil.rpush(RedisUtil.java:433)
 	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:79)
+=======
+2020-08-11 03:05:44 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+>>>>>>> 41131b1b8ea246985421db1782c528a457390c17
 	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
 	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
 	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
@@ -430,6 +444,7 @@ redis.clients.jedis.exceptions.JedisException: Could not get a resource from the
 	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
 	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: java.util.NoSuchElementException: Timeout waiting for idle object
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:449)
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
@@ -438,6 +453,12 @@ Caused by: java.util.NoSuchElementException: Timeout waiting for idle object
 2020-08-11 18:00:08 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
 java.lang.NullPointerException
 	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:77)
+=======
+2020-08-11 03:06:44 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+>>>>>>> 41131b1b8ea246985421db1782c528a457390c17
 	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
 	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
 	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
@@ -445,6 +466,7 @@ java.lang.NullPointerException
 	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
 	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 2020-08-11 18:22:55 DEBUG InternalLoggerFactory:43 - Using SLF4J as the default logging framework
 2020-08-11 18:22:55 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
 2020-08-11 18:22:55 DEBUG NioEventLoop:105 - -Dio.netty.noKeySetOptimization: false
@@ -599,6 +621,12 @@ java.lang.NullPointerException
 2020-08-11 18:27:00 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
 java.lang.NullPointerException
 	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:77)
+=======
+2020-08-11 03:07:21 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+>>>>>>> 41131b1b8ea246985421db1782c528a457390c17
 	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
 	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
 	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
@@ -606,6 +634,7 @@ java.lang.NullPointerException
 	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
 	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 2020-08-11 18:28:40 DEBUG InternalLoggerFactory:43 - Using SLF4J as the default logging framework
 2020-08-11 18:28:40 DEBUG MultithreadEventLoopGroup:44 - -Dio.netty.eventLoopThreads: 16
 2020-08-11 18:28:40 DEBUG NioEventLoop:105 - -Dio.netty.noKeySetOptimization: false
@@ -668,6 +697,12 @@ redis.clients.jedis.exceptions.JedisException: Could not get a resource from the
 	at hyext.ebs.examples.utils.RedisUtil.getJedis(RedisUtil.java:931)
 	at hyext.ebs.examples.utils.RedisUtil.rpush(RedisUtil.java:434)
 	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:80)
+=======
+2020-08-11 03:29:50 ERROR Draft_6455:847 - Runtime exception during onWebsocketMessage
+java.lang.NullPointerException
+	at hyext.ebs.examples.websocket.StringHandler.handle(StringHandler.java:12)
+	at hyext.ebs.examples.websocket.WebSocketClient.onMessage(WebSocketClient.java:71)
+>>>>>>> 41131b1b8ea246985421db1782c528a457390c17
 	at org.java_websocket.client.WebSocketClient.onWebsocketMessage(WebSocketClient.java:500)
 	at org.java_websocket.drafts.Draft_6455.processFrameText(Draft_6455.java:858)
 	at org.java_websocket.drafts.Draft_6455.processFrame(Draft_6455.java:792)
@@ -675,6 +710,7 @@ redis.clients.jedis.exceptions.JedisException: Could not get a resource from the
 	at org.java_websocket.WebSocketImpl.decode(WebSocketImpl.java:218)
 	at org.java_websocket.client.WebSocketClient.run(WebSocketClient.java:425)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: java.util.NoSuchElementException: Timeout waiting for idle object
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:449)
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
@@ -2264,3 +2300,5 @@ java.net.BindException: Address already in use: bind
 	at org.java_websocket.server.WebSocketServer.doSetupSelectorAndServerThread(WebSocketServer.java:505)
 	at org.java_websocket.server.WebSocketServer.run(WebSocketServer.java:315)
 	at java.lang.Thread.run(Thread.java:748)
+=======
+>>>>>>> 41131b1b8ea246985421db1782c528a457390c17

@@ -6,18 +6,14 @@ import com.auth0.jwt.algorithms.Algorithm;
 
 import hyext.ebs.examples.utils.ParamsUtil;
 
-import hyext.ebs.examples.utils.RedisUtil;
-import hyext.ebs.examples.utils.SysConfigUtil;
 import org.java_websocket.enums.ReadyState;
 import org.java_websocket.handshake.ServerHandshake;
-import redis.clients.jedis.Jedis;
 
-import java.io.IOException;
+import java.awt.*;
 import java.net.URI;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 
 /**
@@ -25,10 +21,9 @@ import java.util.Set;
  *
  */
 public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
-
-    private RedisUtil redisUtil = RedisUtil.getRedisUtil();
+    private StringHandler stringHandler  = new StringHandler();
     
-    public WebSocketClient(URI serverUri) throws IOException {
+    public WebSocketClient(URI serverUri) throws AWTException {
         super(serverUri);
     }
 
@@ -44,7 +39,6 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
 
     @Override
     public void onError(Exception arg0) {
-        System.out.println(arg0);
     	System.out.println("------ WebSocketClient onError ------");
     }
 
@@ -69,6 +63,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
     }
     @Override
     public void onMessage(String arg0) {
+//    	System.out.println("-------- 接收到服务端数据： " + arg0 + "--------");
         User user = new User();
         JSONObject obj = JSONObject.parseObject(arg0).getJSONObject("data");
         user = (User)JSONObject.toJavaObject(obj, User.class);
@@ -114,7 +109,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
 //			System.out.println("-------- 数据处理异常 --------");
 //		}
     }
-
+    
     /**
      * 生成开放API Websocket连接参数
      * @param appId  开发者ID（https://ext.huya.com成为开发者后自动生成）
@@ -125,7 +120,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
     public static Map<String, Object> getWebSocketJwtParamsMap(String appId, String secret, long roomId){
         //获取时间戳（毫秒）
         long currentTimeMillis = System.currentTimeMillis();
-        long expireTimeMillis = System.currentTimeMillis() + 10 * 60 * 1000;  //超时时间:通常设置10分钟有效，即exp=iat+600，注意不少于当前时间且不超过当前时间60分钟
+        long expireTimeMillis = System.currentTimeMillis() + 60 * 60 * 1000;  //超时时间:通常设置10分钟有效，即exp=iat+600，注意不少于当前时间且不超过当前时间60分钟
         Date iat = new Date(currentTimeMillis);
         Date exp = new Date(expireTimeMillis);
 
@@ -160,37 +155,44 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
         }
         return null;
     }
-    public static void main(String[] args) throws IOException {
-    	try {
-    		int ExecuteSecond = 10 * 60 * 1000; //监听时间秒
-    		String appId = "u959bb65246ad1cc";      //小程序开发者ID（成为开发者后，https://ext.huya.com可查）
-    		String secret = "8b91df29a2319b7b0ef372baccde1fe0";     //小程序开发者密钥（成为开发者后，https://ext.huya.com可查）
-    		long roomId = 23052024;        //监听主播的房间号
-            Map<String, Object> map = new HashMap<String, Object>(16);
-            map = WebSocketClient.getWebSocketJwtParamsMap(appId,secret,roomId);
+    public static void main(String[] args) {
+    	while(true) {
+            try {
 
-            StringBuffer urlBuffer = new StringBuffer();
-            urlBuffer.append("ws://ws-apiext.huya.com/index.html").append(ParamsUtil.MapToUrlString(map));
+                int ExecuteSecond = 60 * 60 * 1000; //监听时间秒
 
-            WebSocketClient client = new WebSocketClient(URI.create(urlBuffer.toString()));
-            client.setConnectionLostTimeout(3600);
-            client.connect();
-            while (!client.getReadyState().equals(ReadyState.OPEN)) {
+                String appId = "u959bb65246ad1cc";      //小程序开发者ID（成为开发者后，https://ext.huya.com可查）
+                String secret = "8b91df29a2319b7b0ef372baccde1fe0";     //小程序开发者密钥（成为开发者后，https://ext.huya.com可查）
+                long roomId = 181469;        //监听主播的房间号
+
+                Map<String, Object> map = new HashMap<String, Object>(16);
+                map = WebSocketClient.getWebSocketJwtParamsMap(appId, secret, roomId);
+
+                StringBuffer urlBuffer = new StringBuffer();
+                urlBuffer.append("ws://ws-apiext.huya.com/index.html").append(ParamsUtil.MapToUrlString(map));
+
+                WebSocketClient client = new WebSocketClient(URI.create(urlBuffer.toString()));
+                client.setConnectionLostTimeout(3600);
+                client.connect();
+                while (!client.getReadyState().equals(ReadyState.OPEN)) {
+                }
+                Long reqId = System.currentTimeMillis();
+                String sendMsg = "{\"command\":\"subscribeNotice\",\"data\":[\"getMessageNotice\"],\"reqId\":\"" + reqId + "\"}";
+                client.send(sendMsg);
+                int count = 1;
+                while (count < ExecuteSecond) {
+                    Thread.sleep(1000);
+                    System.out.println("connect time:" + count);
+                    client.send("ping");
+                    count++;
+                }
+                client.closeConnection(0, "bye");
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            Long reqId = System.currentTimeMillis();
-            String sendMsg = "{\"command\":\"subscribeNotice\",\"data\":[\"getMessageNotice\"],\"reqId\":\"" + reqId + "\"}";
-            client.send(sendMsg);
-            int count = 1;
-            while (count < ExecuteSecond) {
-                Thread.sleep(1000);
-                System.out.println("connect time:" + count);
-                client.send("ping");
-                count++;
-            }
-            client.closeConnection(0,"bye");
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 	}
+
+
 }
 
