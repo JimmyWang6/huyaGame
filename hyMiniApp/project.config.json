@@ -1,0 +1,38 @@
+{
+  "name": "huya",
+  "outputPath": "dist",
+  "releasePath": "release",
+  "ignore": [
+    "*.md",
+    "LICENSE",
+    ".git/**",
+    ".gitignore",
+    "package-lock.json"
+  ],
+  "builder": {
+    "name": "@hyext/builder-beyond",
+    "config": {
+      "webSDKVersion": "latest",
+      "webTitle": "虎牙小程序",
+      "designWidth": 750,
+      "https": true,
+      "host": "localhost",
+      "port": 18080,
+      "enableLint": {
+        "stylelint": false,
+        "eslint": false
+      },
+      "useCssLoader": true,
+      "buildConfig": {
+        "RN": [],
+        "H5": [
+          {
+            "entry": "index.js",
+            "extType": "web_video_com",
+            "platform": "web"
+          }
+        ]
+      }
+    }
+  }
+}
