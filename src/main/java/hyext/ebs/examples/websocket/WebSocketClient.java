@@ -6,10 +6,12 @@ import com.auth0.jwt.algorithms.Algorithm;
 
 import hyext.ebs.examples.utils.ParamsUtil;
 
+import hyext.ebs.examples.utils.RedisUtil;
 import org.java_websocket.enums.ReadyState;
 import org.java_websocket.handshake.ServerHandshake;
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.URI;
 import java.util.Date;
 import java.util.HashMap;
@@ -21,10 +23,14 @@ import java.util.Map;
  *
  */
 public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
+
     private StringHandler stringHandler  = new StringHandler();
+
+    private RedisUtil redisUtil;
     
-    public WebSocketClient(URI serverUri) throws AWTException {
+    public WebSocketClient(URI serverUri) throws AWTException, IOException {
         super(serverUri);
+        redisUtil = RedisUtil.getRedisUtil();
     }
 
     @Override
